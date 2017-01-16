@@ -31,8 +31,9 @@ require APP . 'config/config.php';
 require APP . 'libs/helper.php';
 
 // load application class
-require APP . 'core/application.php';
-require APP . 'core/controller.php';
+//require APP . 'core/application.php';
+//require APP . 'core/controller.php';
+//require APP . 'core/view.php';
 
 // start the application
 $app = new Application();

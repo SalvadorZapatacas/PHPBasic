@@ -88,3 +88,17 @@ body {
 .footer a {
     color: #454545;
 }
+
+.listadocanciones{
+ border: 1px solid #ccc;
+ padding: 12px;
+ margin-bottom: 15px;
+}
+.listadocanciones header{
+ font-weight: bold;
+}
+
+.exitof{
+    display: inline;
+    background-color: greenyellow;
+}

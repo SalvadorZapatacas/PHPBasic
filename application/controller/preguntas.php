@@ -9,7 +9,7 @@ class Preguntas extends Controller
         
         $preguntas = PreguntasModel::getAll();
         
-        $this->view->render('preguntas/todas',  array ( 'preguntas' => $preguntas));
+        echo $this->view->render('preguntas/todas',  array ( 'preguntas' => $preguntas));
     
     }
     
@@ -17,7 +17,7 @@ class Preguntas extends Controller
     public function crear(){
         
         if(!$_POST){
-            $this->view->render('preguntas/formulariopregunta');
+            echo $this->view->render('preguntas/formulariopregunta');
         }else{
             
             if(!isset($_POST["asunto"])){
@@ -33,9 +33,9 @@ class Preguntas extends Controller
             );
             
             if(PreguntasModel::insert($datos)){
-                $this->view->render('preguntas/preguntainsertada');
+                echo $this->view->render('preguntas/preguntainsertada');
             }else{
-                $this->view->render("/preguntas/formulariopregunta", array(
+                echo $this->view->render("/preguntas/formulariopregunta", array(
                     'errores' => array('Error al insertar'),
                     'datos' => $_POST
                 ));
@@ -54,7 +54,7 @@ class Preguntas extends Controller
             $pregunta = PreguntasModel::getId($id);
             if($pregunta){
                 
-                $this->view->render("preguntas/formulariopregunta" , array('datos'  => get_object_vars($pregunta), 'accion' => 'editar'  ));  
+                echo $this->view->render("preguntas/formulariopregunta" , array('datos'  => get_object_vars($pregunta), 'accion' => 'editar'  ));  
             }else{
                 header('Location : /preguntas/todas');
             } 
@@ -69,7 +69,7 @@ class Preguntas extends Controller
             if(PreguntasModel::edit($datos)){
                 header('Location: /preguntas/todas');
             }else{
-                $this->view->render("/preguntas/formulariopregunta" , array(
+               echo  $this->view->render("/preguntas/formulariopregunta" , array(
                     'errores' => array('Error al editar'),
                     'datos' => $_POST,
                     'accion' => 'editar'

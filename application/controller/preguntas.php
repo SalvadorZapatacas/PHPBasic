@@ -16,6 +16,8 @@ class Preguntas extends Controller
     
     public function crear(){
         
+        Auth::checkAutentication();
+        
         if(!$_POST){
             echo $this->view->render('preguntas/formulariopregunta');
         }else{

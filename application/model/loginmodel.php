@@ -29,7 +29,7 @@ class LoginModel
             }
             
             if(strlen($datos['clave']) < 4){
-                Session::add("feedback_negative", 'La clave debe tener 4 o más caracteres');
+                Session::add("feedback_negative", 'La clave debe tener más de 4 caracteres');
             }
             
             
@@ -68,6 +68,9 @@ class LoginModel
         Session::set('user_name', $usuario->nombre);
         Session::set('user_email', $datos["email"]);
         Session::set('user_logged_in', true);
+        
+        
+        
         
         
         

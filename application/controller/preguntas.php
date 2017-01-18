@@ -8,7 +8,7 @@ class Preguntas extends Controller
     public function todas(){
         
         $preguntas = PreguntasModel::getAll();
-        
+        $this->view->addData(['titulo' => 'Preguntas']);
         echo $this->view->render('preguntas/todas',  array ( 'preguntas' => $preguntas));
     
     }
@@ -19,6 +19,7 @@ class Preguntas extends Controller
         Auth::checkAutentication();
         
         if(!$_POST){
+            $this->view->addData(['titulo' => 'Insertar']);
             echo $this->view->render('preguntas/formulariopregunta');
         }else{
             

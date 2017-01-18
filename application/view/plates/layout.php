@@ -14,6 +14,11 @@
     <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
 </head>
 <body>
+    
+    <!-- Caja de logueo -->
+    <div class="quiensoy"><?php $this->insert('partials/quiensoy'); ?></div>
+    
+    
     <!-- logo -->
     <div class="logo">
         MINI

@@ -102,3 +102,7 @@ body {
     display: inline;
     background-color: greenyellow;
 }
+
+.quiensoy{
+    float: right;
+}

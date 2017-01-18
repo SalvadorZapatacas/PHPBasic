@@ -13,7 +13,7 @@ class Privado extends Controller
     
     
     public function index(){
-        
+        $this->view->addData(['titulo' => 'Privado']);
         echo $this->view->render('privado/index');
         
         

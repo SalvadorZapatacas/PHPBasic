@@ -6,6 +6,7 @@ class Login extends Controller
 {
     
     public function index(){
+        $this->view->addData(['titulo' => 'Login']);
         echo $this->view->render('login/index');
     }
     
